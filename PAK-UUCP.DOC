@@ -1,0 +1,31 @@
+
+                                PAK-UUCP
+
+              Packet<===>FidoNet<===>UUCP Gateway software
+                  Written by Fredric L. Rice, May 1993
+                The Skeptic Tank 1:102/890 (818) 335-9601.
+
+
+FidoNet Message From/To names:
+    Mail from Packet to UUCP is address from PAK-UUCP to UUCP.
+    Mail from Packet bounced by PAK-UUCP is address from PAK-UUCP to PACKET.
+
+    Mail from UUCP to Packet is address from UUCP to PACKET.
+    Mail from UUCP bounced by PAK-UUCP is addressed from PAK-UUCP to UUCP.
+
+Special keywords within inbound Packet messages:
+    DECAP       If the keyword "decap" is found on its own line
+                anywhere in the inbound packet message, the message
+                is scanned and all characters are set to lowercase
+                except for those following a . ? or !.  All of the
+                references to self (the originator I, I'll, I've and
+                I'm) are kept as uppercase.  The code will do its
+                best to reformat yet, in some cases some characers
+                which should normally be uppercase in a message is
+                left as lowercase.
+
+Packet Message text exclusions:
+    If the Packet User includes any "From:" address lines in his or her
+    message, they will all be removed.  This is because the Internet
+    system will include them as needed.
+
